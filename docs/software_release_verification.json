@@ -1,0 +1,44 @@
+{
+  "version": "0.6.0",
+  "date": "2026-11-02",
+  "tests": {
+    "passed": 85,
+    "duration_seconds": 15.46,
+    "exit_code": 0
+  },
+  "compileall_exit_code": 0,
+  "source_smoke_exit_code": 0,
+  "packaged_smoke": {
+    "exit_code": 0,
+    "working_directory": "system TEMP",
+    "screenshot": "docs/software_packaged_preview.png"
+  },
+  "real_api_called": false,
+  "real_main_chat": "deferred_by_user",
+  "visual_review": [
+    "software_preview.png",
+    "software_controls_preview.png",
+    "software_role_preview.png",
+    "software_history_preview.png",
+    "software_packaged_preview.png"
+  ],
+  "remaining": [
+    "real API main chat integration and provider verification",
+    "team review of adapted cases and safety copy",
+    "final visual specification",
+    "voice sample",
+    "second Windows device and actual display scaling verification"
+  ],
+  "sha256": {
+    "main.py": "682b90ebf7e92b2cdcb0ca6d1b8c466a98680212f1e273fc84fd01ebb44fe6ae",
+    "app/__init__.py": "02e61702a92b4e73453b73a708d1171430a45fa044b7f7d24c959999620fc2b3",
+    "app/ui/main_window.py": "c509f192c7ab5c897c4d52b1cf1de07602db329e36a9d42d2cd18f3fe72c7b92",
+    "app/ui/history_dialog.py": "a7074cf4fd52446c163804fd83305cec69aa995ab5dad7f673aafad3abf2acdc",
+    "app/services/history_store.py": "496ebcbbe0e49a583285748def8fdb7c33596d09c707d0608affde1670d93d44",
+    "config/character.json": "0f86a3824b205d89424fd9e52f79ff3b65592d15182b1aac6351ebadf4395a1d",
+    "assets/demo_cases.json": "d5af6b843be45b7648e09a034f587d6e45daaab22b2bf298c6d1bef76765f811",
+    "packaging/qingyu.spec": "7de98254b559b7ce05cb87cba573d72982f30b61f1f9bf004c3e6febdaa313ec",
+    "packaging/使用说明.md": "bed8651468aa9a70f32725d3f747ead56e6744f9f4b7f5a50394fe0ee2cdbaec",
+    "dist/Qingyu/Qingyu.exe": "59debbce7906a7d7e2344c2bf88d1aef4297444c6ae6c9b29daca95d9b7c3186"
+  }
+}

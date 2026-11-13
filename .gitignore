@@ -1,0 +1,10 @@
+.venv/
+.tools/
+build/
+dist/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+config/local_settings.json
+docs/api_verification.local.json
