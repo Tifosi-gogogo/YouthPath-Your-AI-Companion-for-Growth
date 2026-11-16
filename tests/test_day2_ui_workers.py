@@ -50,20 +50,24 @@ def test_settings_hidden_key_save_and_validation(qt_app, tmp_path, monkeypatch):
     assert not dialog.isVisible()
 
 
-def test_add_deepseek_key_test_save_and_reopen(qt_app, tmp_path, monkeypatch):
+def test_manual_api_entry_test_save_and_reopen(qt_app, tmp_path, monkeypatch):
     monkeypatch.delenv("QINGYU_API_KEY", raising=False)
     store = SettingsStore(tmp_path / "settings.json")
     controller = ConnectionController(worker_factory=probe_factory)
     dialog = SettingsDialog(store, controller=controller)
     dialog.show()
-    dialog.deepseek_button.click()
+    assert dialog.base.text() == ""
+    assert dialog.model.text() == ""
+    assert dialog.key.text() == ""
+    dialog.base.setText(VALID.api_base_url)
+    dialog.model.setText(VALID.model)
     dialog.key.setText(VALID.api_key)
     dialog.show_key_button.click()
     assert dialog.key.echoMode() == QLineEdit.Normal
     dialog.show_key_button.click()
     assert dialog.key.echoMode() == QLineEdit.Password
     dialog.test_button.click()
-    assert not dialog.deepseek_button.isEnabled()
+    assert not dialog.base.isEnabled()
     spin_until(lambda: not controller.busy)
     assert "连接成功" in dialog.hint.text()
     dialog.save_button.click()
@@ -74,9 +78,8 @@ def test_add_deepseek_key_test_save_and_reopen(qt_app, tmp_path, monkeypatch):
     reopened = SettingsDialog(store)
     assert reopened.key.text() == VALID.api_key
     assert reopened.key.echoMode() == QLineEdit.Password
-    reopened.openai_button.click()
-    assert reopened.key.text() == ""
     reopened.reject()
+    assert reopened.key.text() == ""
 
 
 def test_settings_can_save_address_without_key(qt_app, tmp_path, monkeypatch):

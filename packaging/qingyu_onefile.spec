@@ -20,7 +20,7 @@ a = Analysis(
 pyz = PYZ(a.pure)
 exe = EXE(
     pyz, a.scripts, a.binaries, a.datas, [],
-    name="Qingyu-Flash",
+    name="Qingyu",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

@@ -1,6 +1,6 @@
 {
-  "api_base_url": "https://api.deepseek.com",
-  "model": "deepseek-flash",
+  "api_base_url": "",
+  "model": "",
   "connect_timeout_seconds": 5,
   "read_timeout_seconds": 40,
   "request_deadline_seconds": 50,
